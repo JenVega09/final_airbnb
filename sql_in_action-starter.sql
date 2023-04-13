@@ -81,12 +81,12 @@ SELECT * FROM final_airbnb;
 -- Find the most popular neighbourhood for listings 
 -- HINT: Look for which neighbourhood appears most frequently in the neighbourhood column
 -- HINT: You are creating "summary rows" for each neighbourhood, so you will just see one entry for each neighbourhood
-SELECT neighbourhood, COUNT(*) AS total_count
-FROM final_airbnb
-GROUP BY neighbourhood
-ORDER BY COUNT(*) DESC
-LIMIT 1
 
+-- SELECT neighbourhood, COUNT(*) AS total_count
+-- FROM final_airbnb
+-- GROUP BY neighbourhood
+-- ORDER BY COUNT(*) DESC
+-- LIMIT 1
 
 -- EXPECTED OUTPUT: Williamsburg
 -- INVESTIGATE: Should Williamsburg be crowned the most popular neighbourhood?
@@ -95,14 +95,20 @@ LIMIT 1
 -- Query the data to discover which listing is the most popular using the reviews_per_month for all listings with a minimum_nights value of less than 7
 -- HINT: Sorting is still your friend! So are constraints.
 
--- EXPECTED OUTPUT: 58059
+SELECT id, reviews_per_month
+FROM final_airbnb
+WHERE minimum_nights < 7
+ORDER BY reviews_per_month DESC
+LIMIT 1
 
+-- EXPECTED OUTPUT: 58059
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 10 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find out which host has the most listings. 
 -- Create a NEW column that will show a calculation for how many listings the host for each listing has in the table
 -- Display the column using aliasing.
 -- HINT: Work this one step at a time. See if you can find a way to just display the count of listings per host first.
+
 
 -- EXPECTED OUTPUT: The Box House Hotel with 6 listings
 
