@@ -68,19 +68,25 @@ SELECT * FROM final_airbnb;
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 7 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find the id of the listing with a room_type of "Private room" that has the most reviews 
 -- HINT: Sorting is your friend!
-SELECT id
-FROM final_airbnb
-WHERE room_type = "Private room"
-ORDER BY number_of_reviews DESC
-LIMIT 1
+
+-- SELECT id
+-- FROM final_airbnb
+-- WHERE room_type = "Private room"
+-- ORDER BY number_of_reviews DESC
+-- LIMIT 1
 
 -- EXPECTED OUTPUT: 58059
-
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 8 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find the most popular neighbourhood for listings 
 -- HINT: Look for which neighbourhood appears most frequently in the neighbourhood column
 -- HINT: You are creating "summary rows" for each neighbourhood, so you will just see one entry for each neighbourhood
+SELECT neighbourhood, COUNT(*) AS total_count
+FROM final_airbnb
+GROUP BY neighbourhood
+ORDER BY COUNT(*) DESC
+LIMIT 1
+
 
 -- EXPECTED OUTPUT: Williamsburg
 -- INVESTIGATE: Should Williamsburg be crowned the most popular neighbourhood?
