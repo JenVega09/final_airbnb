@@ -95,11 +95,11 @@ SELECT * FROM final_airbnb;
 -- Query the data to discover which listing is the most popular using the reviews_per_month for all listings with a minimum_nights value of less than 7
 -- HINT: Sorting is still your friend! So are constraints.
 
-SELECT id, reviews_per_month
-FROM final_airbnb
-WHERE minimum_nights < 7
-ORDER BY reviews_per_month DESC
-LIMIT 1
+-- SELECT id, reviews_per_month
+-- FROM final_airbnb
+-- WHERE minimum_nights < 7
+-- ORDER BY reviews_per_month DESC
+-- LIMIT 1
 
 -- EXPECTED OUTPUT: 58059
 
@@ -109,6 +109,11 @@ LIMIT 1
 -- Display the column using aliasing.
 -- HINT: Work this one step at a time. See if you can find a way to just display the count of listings per host first.
 
+SELECT host_name, COUNT(*) AS host_with_most_listings
+FROM final_airbnb
+GROUP BY (host_name)
+ORDER BY host_with_most_listings DESC
+LIMIT 1
 
 -- EXPECTED OUTPUT: The Box House Hotel with 6 listings
 
