@@ -7,8 +7,8 @@ SELECT * FROM final_airbnb;
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 1 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find out how many rows are in the table "final_airbnb"
-SELECT COUNT(*)
-FROM final_airbnb
+-- SELECT COUNT(*)
+-- FROM final_airbnb
 
 -- EXPECTED OUTPUT: 146
 
@@ -32,6 +32,15 @@ FROM final_airbnb
 
 -- Find both the highest price listing and the lowest price listing, displaying the entire row for each
 -- HINT: This can be two different queries.
+-- SELECT *
+-- FROM final_airbnb
+-- ORDER BY price DESC
+-- LIMIT 1;
+
+-- SELECT *
+-- FROM final_airbnb
+-- ORDER BY price ASC
+-- LIMIT 1;
 
 -- FOOD FOR THOUGHT: Think about the results. Are the high and low prices outliers in this data set?
 
@@ -41,6 +50,9 @@ FROM final_airbnb
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 5 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find the average availability for all listings in the data set (using the availability_365 column)
 -- HINT: Aggregates are more than just big rocks...
+
+SELECT AVG(availability_365)
+FROM final_airbnb
 
 -- EXPECTED OUTPUT: 165.3904
 
