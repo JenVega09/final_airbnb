@@ -51,15 +51,17 @@ SELECT * FROM final_airbnb;
 -- Find the average availability for all listings in the data set (using the availability_365 column)
 -- HINT: Aggregates are more than just big rocks...
 
-SELECT AVG(availability_365)
-FROM final_airbnb
+-- SELECT AVG(availability_365)
+-- FROM final_airbnb
 
 -- EXPECTED OUTPUT: 165.3904
-
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 6 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find all listings that do NOT have a review
 -- HINT: There are a few ways to go about this. Remember that an empty cell is "no value", but not necessarily NULL
+SELECT *
+FROM final_airbnb
+WHERE number_of_reviews = 0
 
 -- EXPECTED OUTPUT: 6 rows
 
