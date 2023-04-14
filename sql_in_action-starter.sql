@@ -109,14 +109,13 @@ SELECT * FROM final_airbnb;
 -- Display the column using aliasing.
 -- HINT: Work this one step at a time. See if you can find a way to just display the count of listings per host first.
 
-SELECT host_name, COUNT(*) AS host_with_most_listings
-FROM final_airbnb
-GROUP BY (host_name)
-ORDER BY host_with_most_listings DESC
-LIMIT 1
+-- SELECT host_name, COUNT(*) AS host_with_most_listings
+-- FROM final_airbnb
+-- GROUP BY (host_name)
+-- ORDER BY host_with_most_listings DESC
+-- LIMIT 1
 
 -- EXPECTED OUTPUT: The Box House Hotel with 6 listings
-
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 11 >>>>>>>>>>>>>>>>>>>>>>>
 -- <<<<<<<<<<<<<<<<<<<<<<< WRAP UP >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -127,4 +126,8 @@ LIMIT 1
 -- <<<<<<<<<<<<<<<<<<<<< ** BONUS ** >>>>>>>>>>>>>>>>>>>>>>>
 -- Find the the percent above or below each listing is compared to the average price for all listings.
 -- HINT: No hints! It's a bonus for a reason :)
+
+SELECT price, host_name, 
+(((165.10 - price)/price)*100) AS percent_change
+FROM final_airbnb
 
