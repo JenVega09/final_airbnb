@@ -8,7 +8,7 @@ SELECT * FROM final_airbnb;
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 1 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find out how many rows are in the table "final_airbnb"
 -- SELECT COUNT(*)
--- FROM final_airbnb
+-- FROM final_airbnb;
 
 -- EXPECTED OUTPUT: 146
 
@@ -17,14 +17,15 @@ SELECT * FROM final_airbnb;
 -- HINT: "Where" could it be?
 -- SELECT host_name
 -- FROM final_airbnb
--- WHERE host_id = 63613
+-- WHERE host_id = 63613;
+
 -- EXPECTED OUTPUT: Patricia
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 3 >>>>>>>>>>>>>>>>>>>>>>>
 -- Query the data to just show the unique neighbourhoods listed
 -- HINT: This is a "distinct" operation...
 -- SELECT DISTINCT neighbourhood AS distint_neighborhoods
--- FROM final_airbnb
+-- FROM final_airbnb;
 
 -- EXPECTED OUTPUT: 40 neighbourhoods listed
 
@@ -35,24 +36,23 @@ SELECT * FROM final_airbnb;
 -- SELECT *
 -- FROM final_airbnb
 -- ORDER BY price DESC
--- LIMIT 1;
+-- LIMIT 5;
 
 -- SELECT *
 -- FROM final_airbnb
 -- ORDER BY price ASC
--- LIMIT 1;
+-- LIMIT 5;
 
 -- FOOD FOR THOUGHT: Think about the results. Are the high and low prices outliers in this data set?
 
 -- EXPECTED OUTPUT: Highest = 785, Lowest = 55
-
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 5 >>>>>>>>>>>>>>>>>>>>>>>
 -- Find the average availability for all listings in the data set (using the availability_365 column)
 -- HINT: Aggregates are more than just big rocks...
 
 -- SELECT AVG(availability_365)
--- FROM final_airbnb
+-- FROM final_airbnb;
 
 -- EXPECTED OUTPUT: 165.3904
 
@@ -61,7 +61,7 @@ SELECT * FROM final_airbnb;
 -- HINT: There are a few ways to go about this. Remember that an empty cell is "no value", but not necessarily NULL
 -- SELECT *
 -- FROM final_airbnb
--- WHERE number_of_reviews = 0
+-- WHERE number_of_reviews = 0;
 
 -- EXPECTED OUTPUT: 6 rows
 
@@ -73,7 +73,7 @@ SELECT * FROM final_airbnb;
 -- FROM final_airbnb
 -- WHERE room_type = "Private room"
 -- ORDER BY number_of_reviews DESC
--- LIMIT 1
+-- LIMIT 5;
 
 -- EXPECTED OUTPUT: 58059
 
@@ -86,7 +86,7 @@ SELECT * FROM final_airbnb;
 -- FROM final_airbnb
 -- GROUP BY neighbourhood
 -- ORDER BY COUNT(*) DESC
--- LIMIT 1
+-- LIMIT 5;
 
 -- EXPECTED OUTPUT: Williamsburg
 -- INVESTIGATE: Should Williamsburg be crowned the most popular neighbourhood?
@@ -95,11 +95,11 @@ SELECT * FROM final_airbnb;
 -- Query the data to discover which listing is the most popular using the reviews_per_month for all listings with a minimum_nights value of less than 7
 -- HINT: Sorting is still your friend! So are constraints.
 
--- SELECT id, reviews_per_month
+-- SELECT id, host_name, reviews_per_month
 -- FROM final_airbnb
 -- WHERE minimum_nights < 7
 -- ORDER BY reviews_per_month DESC
--- LIMIT 1
+-- LIMIT 5;
 
 -- EXPECTED OUTPUT: 58059
 
@@ -113,7 +113,7 @@ SELECT * FROM final_airbnb;
 -- FROM final_airbnb
 -- GROUP BY (host_name)
 -- ORDER BY host_with_most_listings DESC
--- LIMIT 1
+-- LIMIT 5;
 
 -- EXPECTED OUTPUT: The Box House Hotel with 6 listings
 
@@ -127,7 +127,10 @@ SELECT * FROM final_airbnb;
 -- Find the the percent above or below each listing is compared to the average price for all listings.
 -- HINT: No hints! It's a bonus for a reason :)
 
-SELECT price, host_name, 
-(((165.10 - price)/price)*100) AS percent_change
-FROM final_airbnb
+-- SELECT price, host_name, room_type, number_of_reviews,
+-- (((165.10 - price)/price)*100) AS percent_change
+-- FROM final_airbnb
 
+-- SELECT id, host_name, price, room_type, number_of_reviews, availability_365
+-- FROM final_airbnb
+-- ORDER BY price DESC

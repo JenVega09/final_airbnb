@@ -36,4 +36,4 @@ Make sure you have covered enough content to meet the prerequisites before start
 
 > ‼️ Make sure to check out the walk-through video on your course portal to see this setup process happening live!
 
-
+One can draw several conclusions using the data from the final_airbnb table.  The average price of an airbnb rental for the NY area was $165.10/night.  There were 24 listings within +/- 12% of this price.  The two neighborhoods that had the most listings were Williamsburg and Harlem, each with 16 listings.  The average availability was 165 days/year.  With the exception of only a few listings, those that are the most expensive, have the fewest reviews.  Based on this information, if I were listing an airbnb rental unit in the area, I would stay within 15% of the average price and try to list the unit as many days as possible during the year.  In addition, if I were intereted in building reviews, I wouldn't charge too much more than the average. 
